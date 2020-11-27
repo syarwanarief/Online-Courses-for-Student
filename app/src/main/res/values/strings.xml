@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Online Courses for Student</string>
+    <string name="title_activity_menu_utama">MainActivity</string>
+    <string name="title_home">Pelajaran</string>
+    <string name="title_dashboard">Tugas</string>
+    <string name="title_notifications">Profil</string>
+</resources>

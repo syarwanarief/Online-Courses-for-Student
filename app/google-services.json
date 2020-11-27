@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "314741314447",
+    "firebase_url": "https://online-courses-a0230.firebaseio.com",
+    "project_id": "online-courses-a0230",
+    "storage_bucket": "online-courses-a0230.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314741314447:android:2b9074cb560369e6bb71fa",
+        "android_client_info": {
+          "package_name": "mobile.project.onlinecoursesforstudent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "314741314447-cijjqfkgt5j32m3897argtmmootr70fs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgS_8xWx9W2vXwgQb8RdAUZW4seaCFIZo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "314741314447-cijjqfkgt5j32m3897argtmmootr70fs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
