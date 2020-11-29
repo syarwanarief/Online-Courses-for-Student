@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Profil.NotificationsFragment"
+    tools:context=".ui.Profil.ProfilFragment"
     android:orientation="vertical"
     android:layout_marginTop="10dp"
     android:layout_marginBottom="10dp">
@@ -73,7 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Edit Profil"
-            android:textStyle="bold"
+            android:textStyle="normal"
             android:textSize="18sp"
             android:layout_gravity="center"
             android:textColor="@color/black">
@@ -102,11 +102,85 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Logout"
-            android:textStyle="bold"
+            android:textStyle="normal"
             android:textSize="18sp"
             android:layout_gravity="center"
             android:textColor="@color/black">
         </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menuAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:text="Menu Lainnya">
+        </TextView>
+
+        <LinearLayout
+            android:id="@+id/tambahPelajaran"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_baseline_person_add_alt_1_24">
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tambah Pelajaran"
+                android:textStyle="normal"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:textColor="@color/black">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tambahUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_baseline_person_add_alt_1_24">
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tambah User"
+                android:textStyle="normal"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:textColor="@color/black">
+            </TextView>
+
+        </LinearLayout>
 
     </LinearLayout>
 

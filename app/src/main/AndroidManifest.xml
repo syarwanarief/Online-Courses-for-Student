@@ -9,21 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineCoursesForStudent">
-        <activity android:name=".EditProfil"></activity>
+        <activity android:name=".Menu.RegisterMenuForAdmin"></activity>
+        <activity android:name=".Menu.TambahMatkul" />
         <activity
-            android:name=".MenuUtama"
-            android:label="@string/title_activity_menu_utama" />
-        <activity android:name=".Login">
+            android:name=".Menu.SplashScreen"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Menu.EditProfil" />
         <activity
-            android:name=".RegisterUser"
+            android:name=".Menu.MenuUtama"
+            android:label="@string/title_activity_menu_utama" />
+        <activity android:name=".Menu.Login" />
+        <activity
+            android:name=".Menu.RegisterUser"
             android:label="Registrasi" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Menu.MainActivity" />
     </application>
 
 </manifest>

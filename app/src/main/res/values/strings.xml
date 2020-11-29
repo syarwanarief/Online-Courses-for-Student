@@ -4,4 +4,17 @@
     <string name="title_home">Pelajaran</string>
     <string name="title_dashboard">Tugas</string>
     <string name="title_notifications">Profil</string>
+
+    <string-array name="JenisKelamin">
+        <item>----</item>
+        <item>Laki-Laki</item>
+        <item>Perempuan</item>
+    </string-array>
+
+    <string-array name="hakAkses">
+        <item>----</item>
+        <item>Admin</item>
+        <item>Guru</item>
+        <item>User</item>
+    </string-array>
 </resources>

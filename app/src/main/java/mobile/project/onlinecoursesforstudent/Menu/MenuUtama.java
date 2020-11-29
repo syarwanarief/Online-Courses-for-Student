@@ -1,6 +1,8 @@
-package mobile.project.onlinecoursesforstudent;
+package mobile.project.onlinecoursesforstudent.Menu;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -9,6 +11,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import mobile.project.onlinecoursesforstudent.R;
 
 public class MenuUtama extends AppCompatActivity {
 
@@ -25,6 +29,26 @@ public class MenuUtama extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+    }
+
+    //close app
+    boolean doubleBackToExitPressedOnce = false;
+    public void onBackPressed(){
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Tekan Kembali Untuk Keluar Aplikasi", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
     }
 
 }

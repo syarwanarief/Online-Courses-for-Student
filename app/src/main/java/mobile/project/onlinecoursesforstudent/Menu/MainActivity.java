@@ -1,17 +1,19 @@
-package mobile.project.onlinecoursesforstudent;
+package mobile.project.onlinecoursesforstudent.Menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.Toast;
 
-public class EditProfil extends AppCompatActivity {
+import mobile.project.onlinecoursesforstudent.R;
+
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profil);
+        setContentView(R.layout.activity_main);
     }
 
     //close app
@@ -23,9 +25,7 @@ public class EditProfil extends AppCompatActivity {
         }
 
         this.doubleBackToExitPressedOnce = true;
-        Intent intent = new Intent(EditProfil.this, MenuUtama.class);
-        startActivity(intent);
-        finish();
+        Toast.makeText(this, "Tekan Kembali Untuk Keluar Aplikasi", Toast.LENGTH_SHORT).show();
 
         new Handler().postDelayed(new Runnable() {
 

@@ -4,17 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import mobile.project.onlinecoursesforstudent.R;
 
-public class DashboardFragment extends Fragment {
+public class TugasFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;
 
@@ -22,7 +19,7 @@ public class DashboardFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         dashboardViewModel =
                 new ViewModelProvider(this).get(DashboardViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        View root = inflater.inflate(R.layout.fragment_tugas, container, false);
 
         return root;
     }

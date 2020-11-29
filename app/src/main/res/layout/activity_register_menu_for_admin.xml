@@ -4,45 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Menu.EditProfil"
+    tools:context=".Menu.RegisterMenuForAdmin"
     android:orientation="vertical"
     android:layout_margin="5dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Ubah Data profil anda"
+        android:layout_marginBottom="30dp"
+        android:text="Silakan diisi untuk Registrasi"
         android:textSize="25sp"
         android:id="@+id/tvSambutan" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:text="Foto Profil"
-            android:layout_gravity="center">
-        </TextView>
-
-        <ImageView
-            android:id="@+id/fotoProfilLoginBaru"
-            android:layout_width="200sp"
-            android:layout_height="200sp"
-            android:src="@drawable/ic_baseline_person_add_alt_1_24">
-        </ImageView>
-
-    </LinearLayout>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:id="@+id/namaLengkapBaru"
+        android:id="@+id/namaLengkapp"
         android:hint="Nama Lengkap"
         android:inputType="textEmailAddress"/>
 
@@ -50,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:id="@+id/noTelpBaru"
+        android:id="@+id/noTelpp"
         android:hint="No. Telp"
         android:inputType="number"/>
 
@@ -65,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginBottom="5dp"
-            android:id="@+id/UmurBaru"
+            android:id="@+id/Umurr"
             android:hint="Umur"
             android:inputType="number"/>
         <TextView
@@ -81,12 +59,12 @@
         android:layout_marginTop="5dp"
         android:layout_marginBottom="15dp">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="200sp"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:text="Jenis Kelamin"></TextView>
         <Spinner
-            android:id="@+id/jenisKelaminBaru"
+            android:id="@+id/jenisKelaminn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/JenisKelamin"
@@ -94,24 +72,40 @@
 
     </LinearLayout>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/black"
-        android:text="Note :
-        \nUntuk perubahan password, kami akan mengirimkan pesan berupa email untuk melakukan perubahan password. Pastikan email anda aktif.
-        \nTerimakasih.">
-    </TextView>
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp">
+        <TextView
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Hak Akses"></TextView>
+        <Spinner
+            android:id="@+id/hakAksess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/hakAkses"
+            ></Spinner>
 
-    <Button
-        android:id="@+id/ubahPassword"
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/edtEmailRegisterr"
+        android:hint="Email"
+        android:inputType="textEmailAddress"/>
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Klik disini untuk melakukan ubah password"
-        android:textAllCaps="false">
-    </Button>
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:id="@+id/edtPasswordRegisterr"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -122,9 +116,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textAllCaps="false"
-            android:text="Simpan Perubahan"
-            android:id="@+id/btnSimpanProfilBaru" />
+            android:text="Register"
+            android:id="@+id/btnRegisterUserr" />
 
     </LinearLayout>
+
 
 </LinearLayout>

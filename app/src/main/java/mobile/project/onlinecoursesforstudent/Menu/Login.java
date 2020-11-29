@@ -1,4 +1,4 @@
-package mobile.project.onlinecoursesforstudent;
+package mobile.project.onlinecoursesforstudent.Menu;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,11 +10,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,6 +20,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import mobile.project.onlinecoursesforstudent.R;
 
 public class Login extends AppCompatActivity {
 
@@ -31,6 +31,7 @@ public class Login extends AppCompatActivity {
     public static final String MyPREFERENCES = "MyPrefs" ;
     public static final String Pass = "passKey";
     public static final String Emaill = "emailKey";
+    public static final String Status = "statusKey";
     SharedPreferences sharedpreferences;
 
     EditText Email, Password;
@@ -39,7 +40,7 @@ public class Login extends AppCompatActivity {
     FirebaseAuth.AuthStateListener mAuthListner;
     FirebaseUser mUser;
 
-    String email,displayName, password;
+    String email,displayName, password, status;
     ProgressDialog progressDialog;
     public static final String userEmail="";
 
@@ -47,18 +48,6 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        //cek status login
-        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        if (sharedpreferences.contains(Emaill) && sharedpreferences.contains(Pass)) {
-            new Handler().postDelayed(new Runnable() {
-                public void run() {
-                    Intent homeIntent = new Intent(Login.this, MenuUtama.class);
-                    startActivity(homeIntent);
-                    finish();
-                }
-            },SPLASH_TIME_OUT);
-        }
 
         LogInButton = (Button) findViewById(R.id.btnLogin);
         Register = (Button) findViewById(R.id.btnRegister);
@@ -93,15 +82,6 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 userSign();
-                sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedpreferences.edit();
-                editor.putString(Emaill, email);
-                editor.putString(Pass, password);
-                editor.commit();
-
-                Intent intent = new Intent(Login.this, MenuUtama.class);
-                intent.putExtra("email",email);
-                Toast.makeText(Login.this, "Selamat Datang "+Email.getText().toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -169,8 +149,13 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(Login.this, MenuUtama.class);
 
         // Sending Email to Dashboard Activity using intent.
-        intent.putExtra("email",email);
+        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putString(Emaill, email);
+        editor.putString(Pass, password);
+        editor.commit();
         startActivity(intent);
+        Toast.makeText(Login.this, "Selamat Datang "+Email.getText().toString(), Toast.LENGTH_SHORT).show();
         finish();
     }
 
