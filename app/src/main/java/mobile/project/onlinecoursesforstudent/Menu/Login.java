@@ -3,16 +3,21 @@ package mobile.project.onlinecoursesforstudent.Menu;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -34,8 +39,9 @@ public class Login extends AppCompatActivity {
     public static final String Status = "statusKey";
     SharedPreferences sharedpreferences;
 
+    TextView resetPassword, Register;
     EditText Email, Password;
-    Button LogInButton, Register;
+    Button LogInButton;
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener mAuthListner;
     FirebaseUser mUser;
@@ -50,10 +56,11 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         LogInButton = (Button) findViewById(R.id.btnLogin);
-        Register = (Button) findViewById(R.id.btnRegister);
+        Register = (TextView) findViewById(R.id.btnRegister);
         Email = (EditText) findViewById(R.id.emailLogin);
         Password = (EditText) findViewById(R.id.passwordLogin);
         progressDialog = new ProgressDialog(this);
+        resetPassword = findViewById(R.id.resetPassword);
 
         mAuth = FirebaseAuth.getInstance();
         mUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -82,6 +89,37 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 userSign();
+            }
+        });
+
+        resetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final EditText edittext = new EditText(Login.this);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
+                builder.setMessage("Masukkan Email");
+                builder.setView(edittext);
+
+                builder.setPositiveButton("Reset Password", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        mAuth.sendPasswordResetEmail(edittext.getText().toString())
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(Login.this,"Berhasil. Silahkan cek Email anda",Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+                    }
+                });
+
+                builder.setNegativeButton("Batal", null);
+                // buat dan tampilkan alert dialog
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
     }

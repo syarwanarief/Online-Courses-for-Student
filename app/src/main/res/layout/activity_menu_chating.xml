@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Menu.MenuChating"
+    android:orientation="vertical"
+    android:background="#f2f2f2">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idChating"
+        android:layout_marginTop="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="15sp"
+        android:layout_weight="3">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90sp"
+        android:layout_weight="1"
+        android:layout_margin="5sp"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5sp"
+            android:layout_marginRight="30sp"
+            app:cardCornerRadius="10sp"
+            android:background="#FFFFFF">
+
+            <EditText
+                android:id="@+id/textChat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:layout_marginLeft="5sp"
+                android:singleLine="true"
+                android:inputType="textMultiLine"
+                android:hint="Ketik pesan"></EditText>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageButton
+            android:id="@+id/btnSendChat"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_send_24"></ImageButton>
+
+    </LinearLayout>
+
+</LinearLayout>

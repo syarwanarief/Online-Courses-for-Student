@@ -164,7 +164,6 @@ public class RegisterUser extends AppCompatActivity {
 
                                     DatabaseReference mRef = FirebaseDatabase.getInstance().getReference().child("Akun").child(result);
 
-
                                     DatabaseReference fieldFoto = mRef.child("FotoProfil");
                                     DatabaseReference fieldNama = mRef.child("NamaLengkap");
                                     DatabaseReference fieldTelp = mRef.child("NoTelp");
@@ -196,8 +195,6 @@ public class RegisterUser extends AppCompatActivity {
                                 }
                             }
                         });
-
-                Toast.makeText(RegisterUser.this, "Berhasil", Toast.LENGTH_SHORT).show();
             }));
 
         } else {

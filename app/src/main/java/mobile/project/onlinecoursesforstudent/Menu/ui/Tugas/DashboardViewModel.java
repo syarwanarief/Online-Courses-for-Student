@@ -1,4 +1,4 @@
-package mobile.project.onlinecoursesforstudent.ui.Tugas;
+package mobile.project.onlinecoursesforstudent.Menu.ui.Tugas;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

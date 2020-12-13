@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.DaftarPelajaran.DaftarPelajaranFragment"
+    tools:context=".Menu.ui.DaftarPelajaran.DaftarPelajaranFragment"
     android:background="#F2F2F2">
 
     <EditText
@@ -13,6 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10sp"
+        android:focusedByDefault="false"
+        android:focusableInTouchMode="true"
         android:hint="Cari..."></EditText>
 
     <androidx.recyclerview.widget.RecyclerView

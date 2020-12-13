@@ -7,7 +7,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="120sp"
         app:cardCornerRadius="10sp"
         android:layout_marginLeft="5sp"
         android:layout_marginRight="5sp"
@@ -15,27 +15,31 @@
         android:layout_gravity="center">
 
         <LinearLayout
+            android:id="@+id/klikTugas"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_height="120sp"
+            android:orientation="vertical"
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/viewMatkul"
+                android:id="@+id/viewMatkulTugas"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50sp"
                 android:gravity="center|left"
                 android:layout_weight="1"
-                android:textSize="17sp"
+                android:textSize="19sp"
                 android:textColor="@color/black"
                 android:text="Mata Pelajaran"></TextView>
 
-                <ImageButton
-                    android:id="@+id/btnAddMatkul"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_add_box_24">
-                </ImageButton>
+            <TextView
+                android:id="@+id/viewDesc"
+                android:layout_width="match_parent"
+                android:layout_height="70sp"
+                android:gravity="center|left"
+                android:layout_weight="1"
+                android:inputType="textMultiLine"
+                android:maxLength="70"
+                android:text="Mata Pelajaran"></TextView>
 
         </LinearLayout>
 

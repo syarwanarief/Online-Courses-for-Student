@@ -90,7 +90,7 @@ public class RegisterMenuForAdmin extends AppCompatActivity {
         }
 
         this.doubleBackToExitPressedOnce = true;
-        Intent intent = new Intent(RegisterMenuForAdmin.this, Login.class);
+        Intent intent = new Intent(RegisterMenuForAdmin.this, MenuUtama.class);
         startActivity(intent);
         finish();
 

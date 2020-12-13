@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="mobile.project.onlinecoursesforstudent.ui.DaftarPelajaran.DaftarPelajaranFragment"
+        android:name="mobile.project.onlinecoursesforstudent.Menu.ui.DaftarPelajaran.DaftarPelajaranFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_daftar_pelajaran" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="mobile.project.onlinecoursesforstudent.ui.Tugas.TugasFragment"
+        android:name="mobile.project.onlinecoursesforstudent.Menu.ui.Tugas.TugasFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_tugas" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="mobile.project.onlinecoursesforstudent.ui.Profil.ProfilFragment"
+        android:name="mobile.project.onlinecoursesforstudent.Menu.ui.Profil.ProfilFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_profil" />
 </navigation>

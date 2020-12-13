@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10sp"
+    android:orientation="vertical"
+    tools:context=".Menu.DeskripsiTugas">
+
+    <TextView
+        android:id="@+id/matkulViewTugas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30sp"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="#3399ff"
+        android:textStyle="bold"
+        android:text="Tugas"></TextView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20sp"
+        android:layout_marginBottom="20sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="20sp"
+            android:paddingBottom="20sp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deskripsi Tugas"
+                android:textSize="18sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/deskViewTugas"
+                android:layout_width="match_parent"
+                android:layout_height="200sp"
+                android:text="Deskripsi Tugas"
+                android:textSize="17sp"></TextView>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Link"
+        android:textSize="18sp"
+        android:textStyle="bold"></TextView>
+
+
+    <TextView
+        android:id="@+id/linkViewTugas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deskripsi Tugas"
+        android:textSize="17sp"></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_gravity="center"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btnKerjakan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buka link dan kerjakan"
+            android:textAllCaps="false"
+            android:gravity="center"></Button>
+    </LinearLayout>
+
+
+</LinearLayout>

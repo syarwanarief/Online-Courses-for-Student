@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Menu.BuatTugas"
+    android:orientation="vertical"
+    android:layout_margin="10sp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deskripsi Tugas"></TextView>
+
+    <EditText
+        android:id="@+id/deskripsi"
+        android:layout_width="match_parent"
+        android:layout_height="170sp"
+        android:inputType="text|textMultiLine"
+        android:hint="Tulis deskripsi tugas"
+        android:gravity="bottom"
+        android:autoSizeTextType="none">
+    </EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:text="URL"></TextView>
+
+    <EditText
+        android:id="@+id/link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Link Pengerjaan"></EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:text="Mata Pelajaran"></TextView>
+    <Spinner
+        android:id="@+id/spinnerPilihMatkul"
+        android:layout_width="match_parent"
+        android:layout_height="50sp">
+    </Spinner>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="bottom">
+
+        <Button
+            android:id="@+id/btnBuatTugas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buat tugas"
+            android:textAllCaps="false"></Button>
+
+    </LinearLayout>
+
+</LinearLayout>

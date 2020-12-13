@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5sp"
+        android:layout_marginRight="5sp"
+        android:layout_marginBottom="1sp"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:id="@+id/klikChat"
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/profilChat"
+                android:layout_width="90sp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10sp"
+                android:src="@drawable/ic_baseline_person_24">
+            </ImageView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/emailChat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|left"
+                    android:layout_weight="1"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    android:text="Chat"></TextView>
+
+                <TextView
+                    android:id="@+id/isiChatDC"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="textChat"
+                    android:maxLength="50"></TextView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

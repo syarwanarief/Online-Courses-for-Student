@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -20,6 +22,8 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -44,7 +48,7 @@ public class EditProfil extends AppCompatActivity {
 
     EditText namaLengkap, noTelp, umur;
     Spinner jenisKelamin;
-    Button simpan;
+    Button simpan, ubahpassword;
     ImageView fotoProfil;
     FirebaseAuth firebaseAuth;
 
@@ -79,6 +83,7 @@ public class EditProfil extends AppCompatActivity {
         fotoProfil = findViewById(R.id.fotoProfilLoginBaru);
         umur = findViewById(R.id.UmurBaru);
         jenisKelamin = findViewById(R.id.jenisKelaminBaru);
+        ubahpassword = findViewById(R.id.ubahPassword);
 
         firebaseStorage = FirebaseStorage.getInstance();
         storageReference = firebaseStorage.getReference();
@@ -132,6 +137,35 @@ public class EditProfil extends AppCompatActivity {
             }
         });
 
+        ubahpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(EditProfil.this);
+                builder.setMessage("Yakin ingin reset password");
+
+                builder.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        firebaseAuth.sendPasswordResetEmail(getEmail)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(EditProfil.this,"Berhasil. Silahkan cek Email anda",Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+                    }
+                });
+
+                builder.setNegativeButton("Tidak", null);
+                // buat dan tampilkan alert dialog
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
+
     }
 
     //close app
@@ -165,17 +199,8 @@ public class EditProfil extends AppCompatActivity {
             progressDialog.setCanceledOnTouchOutside(false);
             progressDialog.show();
 
-            File file = new File(String.valueOf(filePath));
-
-            long sizeImage = file.length() / 1024;
-
-            ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 20, bytes);
-            String path = MediaStore.Images.Media.insertImage(EditProfil.this.getContentResolver(), bitmap, String.valueOf(filePath), null);
-            fotonya = Uri.parse(path);
-
             final StorageReference reference = storageReference.child("FotoProfil/" + UUID.randomUUID().toString());
-            reference.putFile(fotonya)
+            reference.putFile(filePath)
                     .addOnSuccessListener(taskSnapshot -> progressDialog.dismiss())
                     .addOnFailureListener(e -> {
                         progressDialog.dismiss();
@@ -210,7 +235,7 @@ public class EditProfil extends AppCompatActivity {
 
                 Toast.makeText(EditProfil.this, "Sukses", Toast.LENGTH_LONG).show();
 
-                Intent intent = new Intent(EditProfil.this, Login.class);
+                Intent intent = new Intent(EditProfil.this, MenuUtama.class);
                 startActivity(intent);
 
                 spotsDialog.dismiss();
